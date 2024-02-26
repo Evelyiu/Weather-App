@@ -1,0 +1,10 @@
+/* <uniquifier>: Use a uniquifier for the class name
+<weight>: Use a value from 300 to 900 */
+
+.rubik-testing {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+

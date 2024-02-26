@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - My First API Project</title>
+    <link rel="icon" type="image/x-icon" href="./src/favicon.svg">
+
+    <!--CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./styles.css" rel="stylesheet">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-image: url(./src/testing.png);background-size:cover;" class="bg-cover h-100 rubik-testing">
+<!--NavBar-->
+<div class="navbar bg-transparent">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-l">Weather App <br> by Eve :)</a>
+    </div>
+    <div class="flex-none">
+      <button class="btn btn-square btn-ghost" id="search-icon">
+        <img src="./src/search_icon.svg">
+      </button>
+    </div>
+</div>
+<!--container-->
+<div class="flex flex-col md:flex-row py-14 px-6 min"> 
+    <!--City Input-->
+    <div id="search-container" class="hidden w-auto md:w-2/5 mb-10 md:mb-0">
+        <input type="text" id="city-input" class="mb-4 city-input bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="E.g., New York, London"  />
+        <button class="search-btn mb-4 text-white bg-blue-500 hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+    </div>
+    
+    <!--Weather Board-->
+    <div class="w-full md:ml-10 flex flex-col">
+    <!--Cuurent Weather-->
+    <div class="flex flex-row p-8 rounded-lg h-80 text-white" id="cityBackground">
+        <!--Current Weather Data-->
+        <div class="current-weather flex flex-col w-1/2 justify-center  lg:items-center">
+            <h1 id="city-output" class="text-4xl md:text-5xl lg:text-6xl font-bold">City</h1>
+            <h6 class="text-l md:text-xl pt-4">Temperature: <span id="current-temperature"></span>°C</h6>
+            <h6 class="text-l md:text-xl">Wind: <span id="current-wind"></span>m/s</h6>
+            <h6 class="text-l md:text-xl">Humidity: <span id="current-humidity"></span>%</h6>
+        </div>
+        <!--Current Weather Image-->
+        <div class="flex flex-col justify-center items-center w-1/2 ">
+                <img class="w-auto current-icon md:h-30 lg:h-40" src="">
+                <h6 class="text-white text-l md:text-xl text-center current-description">Rainy</h6>
+        </div>
+    </div>
+
+    <div class="flex flex-row p-8 mt-10 h-auto py-0 text-white">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 w-full items-center">
+            <div class="forecast-item border-2 p-4 flex flex-col justify-center items-center rounded-lg">
+                <h3 class="forecast-date drop-shadow font-bold">Date</h3>
+                <img class="forecast-icon" src="" alt="Forecast Weather Icon">
+                <p class="forecast-temperature"></p>
+            </div>
+            <div class="forecast-item border-2 p-4 flex flex-col justify-center items-center rounded-lg">
+                <h3 class="forecast-date drop-shadow font-bold">Date</h3>
+                <img class="forecast-icon" src="" alt="Forecast Weather Icon">
+                <p class="forecast-temperature"></p>
+            </div>
+            <div class="forecast-item border-2  p-4 flex flex-col justify-center items-center rounded-lg">
+                <h3 class="forecast-date drop-shadow font-bold">Date</h3>
+                <img class="forecast-icon" src="" alt="Forecast Weather Icon">
+                <p class="forecast-temperature"></p>
+            </div>
+            <div class="forecast-item border-2 p-4 flex flex-col justify-center items-center rounded-lg">
+                <h3 class="forecast-date drop-shadow font-bold">Date</h3>
+                <img class="forecast-icon" src="" alt="Forecast Weather Icon">
+                <p class="forecast-temperature"></p>
+            </div>
+            <div class="forecast-item border-2 p-4 flex flex-col justify-center items-center rounded-lg">
+                <h3 class="forecast-date drop-shadow font-bold">Date</h3>
+                <img class="forecast-icon" src="" alt="Forecast Weather Icon">
+                <p class="forecast-temperature"></p>
+            </div>
+          </div>
+        
+    </div>
+    </div>
+</div>   
+<script src="./script.js"></script>
+</body>
+</html>
